@@ -1,4 +1,11 @@
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Cadastro de Empréstimos")
+mo(request):
+    template_name = 'emprestimos/form_emprestimo.html'
+    if request.method == 'POST':
+        form = EmprestimoForm(request.POST or None, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'O cadastro de empréstimo foi realizado com sucesso!')
+        return redirect('emprestimos:listar_emprestimos')
+    form = EmprestimoForm()
+    context = {'form': form}
+    return render(request, template_name, context)
