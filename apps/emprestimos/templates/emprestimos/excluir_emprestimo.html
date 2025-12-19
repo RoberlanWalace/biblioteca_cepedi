@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Excluir Emprestimo</title>
+    <title>Title</title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,17 +14,15 @@
 <body>
 <div class="card">
     <div class="card-header">
-        Tem certeza que deseja remover o emprestimo abaixo?
+        Tem certeza que deseja remover o aluno abaixo?
     </div>
     <div class="card-body">
         <h5 class="card-title">Id: {{emprestimo.id}}</h5>
-        <h5 class="card-title">Título: {{emprestimo.titulo}}</h5>
-        <h5 class="card-title">Autor: {{emprestimo.autor}}</h5>
-        <h5 class="card-title">Edição: {{livro.edicao}}</h5>
-        <h5 class="card-title">Editora: {{livro.editora}}</h5>
-        <h5 class="card-title">Ano da Publicação: {{livro.ano_publicacao}}</h5>
-        <h5 class="card-title">ISBN: {{livro.isbn}}</h5>
-        <h5 class="card-title">Número de Páginas: {{livro.numero_paginas}}</h5>
+        <h5 class="card-title">Aluno: {{emprestimo.aluno_id}}</h5>
+        <h5 class="card-title">Livro: {{emprestimo.livro_id}}</h5>
+        <h5 class="card-title">Data da devolução: {{emprestimo.data_devolucao}}</h5>
+        <h5 class="card-title">Data prev. da Devolução: {{emprestimo.data_prevista_devolucao}}</h5>
+        <h5 class="card-title">Status: {{emprestimo.get_status_display}}</h5>
 
         <form method="post">
              {% csrf_token %}
